@@ -25,6 +25,8 @@ COGS = [
     "cogs.moderation",
     "cogs.giveaways",
     "cogs.welcome",
+    "cogs.tiktok",
+    "cogs.voice_greet",
 ]
 
 
