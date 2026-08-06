@@ -143,5 +143,21 @@ async def _create_schema():
                 leave_channel_id BIGINT,
                 leave_message TEXT
             );
+
+            CREATE TABLE IF NOT EXISTS tiktok_config (
+                guild_id BIGINT PRIMARY KEY,
+                tiktok_username TEXT NOT NULL,
+                channel_id BIGINT NOT NULL,
+                role_ping_id BIGINT,
+                message TEXT,
+                is_live BOOLEAN DEFAULT FALSE,
+                last_notified_at TIMESTAMPTZ
+            );
+
+            CREATE TABLE IF NOT EXISTS voice_greet_config (
+                guild_id BIGINT PRIMARY KEY,
+                channel_id BIGINT NOT NULL,
+                message TEXT
+            );
             """
         )
